@@ -1,37 +1,245 @@
-<h1>Hello, I am Bernice</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bernice</title>
+    
+    <!-- Bootstrap CDN CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style> 
+     * { 
+         margin: 20px;
+     }
 
-<img src="profile_picture.jpg" style="height:50px"></img>
+     .navbar-custom { 
+         height: 50px;
+         background-color: #31383F;
+     }
 
-<p>I am a Year 2 Information Systems student who is also doing a double track in Business Analytics and Digitalisation & Cloud Solutions.
-  In my free time, I watch K-dramas and embroider!
-</p>
+     .background-1 { 
+         background-color: #F2E9EB;
+         margin-top: 0;
+         margin-bottom: 0;
+     }
 
-<h2>Table</h2>
-<table style="border:1px">
-  <tr>
-    <th>Date</th>
-    <th>Mon</th>
-    <th>Tue</th>
-  </tr>
-  <tr>
-    <td>12 00</td>
-    <td colspan='2'>WAD2</td>
-  </tr>
-  <tr>
-    <td>13 00</td>
-    <td rowspan='2'>ES</td>
-    <td>BPAS</td>
-  </tr>
-  <tr>
-    <td>14 00</td>
-    <td>IDP</td>
-  </tr>
-</table>
+     .height-img { 
+         height: 400px;
+     }
 
-<h2>Form</h2> 
-<form> 
-  Name: <input type='text' placeholder='Insert name here'/><br/>
-  Relationship status: <input type='radio'/>Single <input type='radio'/>Taken<br/>
-  Favourite fruits: <input type='checkbox'/>Banana <input type='checkbox'/>Apple <input type='checkbox'/>Strawberry<br/>
-  <input type='submit' value='Submit'/>
-</form> 
+     .timetable-bg { 
+        background-color: #dec8cd; 
+     }
+
+     .form-check-input:checked { 
+         background-color: #dec8cd;
+         border-color: #dec8cd;
+     }
+
+     .btn-pink { 
+         background-color: #dec8cd;
+     }
+
+    </style> 
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom mb-0">
+        <div class="container-fluid">
+          <a class="navbar-brand" href=".">Bernice</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href=".">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./Education">Education</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./Experience">Experience</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./PersonalLife">Personal Life</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+
+    <div class="text-center pt-5 pb-1 background-1 my-0"> 
+        <h1>Hello, I am Bernice</h1>
+    </div>
+
+    <div class="text-left py-4 background-1 my-0">
+        <div id="aboutMeCarou" class="carousel slide carousel-dark" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#aboutMeCarou" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#aboutMeCarou" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#aboutMeCarou" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              <button type="button" data-bs-target="#aboutMeCarou" data-bs-slide-to="3" aria-label="Slide 4"></button>
+              <button type="button" data-bs-target="#aboutMeCarou" data-bs-slide-to="4" aria-label="Slide 5"></button>
+              <button type="button" data-bs-target="#aboutMeCarou" data-bs-slide-to="5" aria-label="Slide 6"></button>
+            </div>
+            <div class="carousel-inner mx-auto">
+              <div class="carousel-item active mx-auto">
+                <img src="./photos/aboutme/img1.jpg" class="d-block height-img m-0 mx-auto" alt="...">
+              </div>
+              <div class="carousel-item mx-auto">
+                <img src="./photos/aboutme/img2.jpg" class="d-block height-img m-0 mx-auto" alt="...">
+              </div>
+              <div class="carousel-item mx-auto">
+                <img src="./photos/aboutme/img3.jpg" class="d-block height-img m-0 mx-auto" alt="...">
+              </div>
+              <div class="carousel-item mx-auto">
+                <img src="./photos/aboutme/img4.jpg" class="d-block height-img m-0 mx-auto" alt="...">
+              </div>
+              <div class="carousel-item mx-auto">
+                <img src="./photos/aboutme/img5.jpg" class="d-block height-img m-0 mx-auto" alt="...">
+              </div>
+              <div class="carousel-item mx-auto">
+                <img src="./photos/aboutme/img6.jpg" class="d-block height-img m-0 mx-auto" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#aboutMeCarou" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#aboutMeCarou" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        <h3 class="mt-5 mx-5">About Me</h3> 
+        <p class="mx-5">
+            I am a Year 2 Information Systems student from SMU! Specifically, I am doing a double track in Business Analytics and Digitalisation & Cloud Solutions. This webpage is for my WAD2 module!
+        </p>
+    </div>
+
+    <div class="text-left pt-5 background-1 pb-5">
+        <h2 class="mx-5">Current Timetable</h2>
+        <div class="row mx-5 my-0"> 
+            <div class="col fw-bold text-center m-0 p-2">
+                Time
+            </div>
+            <div class="col fw-bold text-center m-0 p-2">
+                Mon
+            </div>
+            <div class="col fw-bold text-center m-0 p-2">
+                Tue
+            </div>
+            <div class="col fw-bold text-center m-0 p-2">
+                Wed
+            </div>
+            <div class="col fw-bold text-center m-0 p-2">
+                Thu
+            </div>
+            <div class="col fw-bold text-center m-0 p-2">
+                Fri
+            </div>
+        </div>
+        <div class="row mx-5 my-0"> 
+            <div class="col text-center m-0 p-2">
+                12pm
+            </div>
+            <div class="col text-center m-0 p-2">
+                
+            </div>
+            <div class="col text-center m-0 p-2">
+                
+            </div>
+            <div class="col text-center timetable-bg m-0 p-2">
+                BPAS
+            </div>
+            <div class="col text-center timetable-bg m-0 p-2">
+                AF
+            </div>
+            <div class="col text-center m-0 p-2">
+                
+            </div>
+        </div>
+        <div class="row mx-5 my-0"> 
+            <div class="col text-center m-0 p-2">
+                3.30pm
+            </div>
+            <div class="col text-center timetable-bg m-0 p-2">
+                IDP
+            </div>
+            <div class="col text-center m-0 p-2">
+                
+            </div>
+            <div class="col text-center m-0 p-2">
+                
+            </div>
+            <div class="col text-center timetable-bg m-0 p-2">
+                WAD2
+            </div>
+            <div class="col text-center m-0 p-2">
+                
+            </div>
+        </div>
+        <div class="row mx-5 my-0"> 
+            <div class="col text-center m-0 p-2">
+                7pm
+            </div>
+            <div class="col text-center m-0 p-2">
+                
+            </div>
+            <div class="col text-center m-0 p-2">
+                
+            </div>
+            <div class="col text-center timetable-bg m-0 p-2">
+                Ethics
+            </div>
+            <div class="col text-center m-0 p-2">
+                
+            </div>
+            <div class="col text-center m-0 p-2">
+                
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="text-left pt-4 background-1 pb-5 my-0">
+        <h2 class="mx-5">Contact Me</h2> 
+        <form class="my-0 mx-5">
+            <div class="my-0 p-0 mx-3">
+                <label for="name" class="form-label fw-bold">Name</label>
+                <input type="text" class="form-control" id="name">
+              </div>
+            <div class="my-0 p-0 mx-3">
+              <label for="email" class="form-label fw-bold">Email address</label>
+              <input type="email" class="form-control" id="email">
+            </div>
+            <div class="my-0 p-0 mx-3">
+                <label class="form-label me-4 fw-bold">Purpose</label>
+                <input class="form-check-input align-middle mt-0" type="radio" name="purpose" id="internship">
+                <label class="form-check-label ms-0 me-4" for="internship">
+                  Internship
+                </label>
+                <input class="form-check-input align-middle mt-0" type="radio" name="purpose" id="school">
+                <label class="form-check-label ms-0 me-4" for="school">
+                  School
+                </label>
+                <input class="form-check-input align-middle mt-0" type="radio" name="purpose" id="cca">
+                <label class="form-check-label ms-0 me-4" for="cca">
+                  CCA
+                </label>
+                <input class="form-check-input align-middle mt-0" type="radio" name="purpose" id="chat">
+                <label class="form-check-label ms-0 me-4" for="Chat">
+                  Chat
+                </label>
+            </div>
+            <button type="submit" class="btn btn-pink mx-3">Submit</button>
+          </form>
+    </div>
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
