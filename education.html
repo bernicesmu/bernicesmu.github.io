@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bernice</title>
+    
+    <!-- Bootstrap CDN CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style> 
+     * { 
+         margin: 20px;
+     }
+
+     .navbar-custom { 
+         height: 50px;
+         background-color: #31383F;
+     }
+
+     .background-1 { 
+         background-color: #F2E9EB;
+         margin-top: 0;
+         margin-bottom: 0;
+     }
+
+     .education-img { 
+         height: 150px;
+         width: auto;
+         object-fit: contain;
+     }
+
+     .btn-pink { 
+         background-color: #dec8cd;
+     }
+
+     .pill-pink { 
+         background-color: #dec8cd;
+         color: #31383F;
+         left: 88% !important;
+     }
+
+    </style> 
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom mb-0">
+        <div class="container-fluid">
+          <a class="navbar-brand" href=".">Bernice</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link"  href=".">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="./education.html">Education</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./Experience">Experience</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./PersonalLife">Personal Life</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+
+    <div class="text-left pt-5 background-1 pb-5"> 
+        <h3 class="mx-5">Schools</h3>
+        <div class="row justify-content-center">
+          <div class="card col-sm-12 col-md-4 position-relative" style="width: 18rem;">
+              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill pill-pink ms-0 ">
+                Current
+              </span>
+            <img src="./photos/education/smu.jpeg" class="card-img-top education-img" alt="...">
+            <div class="card-body mx-0">
+              <h5 class="card-title mx-0">Singapore Management University</h5>
+              <p class="card-text mx-0">Aug 2021 to May 2025</p>
+              <p class="card-text mx-0">Studying Bachelor of Science (Information Systems), track in BA + DCS</p>
+              <p class="card-text mx-0 my-0">CCAS:</p>
+              <ul class="card-text mx-0 ps-1">
+                  <li class="my-0">Vice President of SMUBIA</li>
+                  <li class="my-0">Analyst in Growth-X</li>
+                  <li class="my-0">Mentor of Coders Assembly</li>
+              </ul>
+              <a href="https://www.smu.edu.sg/" target='_blank' class="btn btn-pink mx-0">SMU Website</a>
+            </div>
+          </div>
+          <div class="card col-sm-12 col-md-4" style="width: 18rem;">
+            <img src="./photos/education/nyjc.png" class="card-img-top education-img" alt="...">
+            <div class="card-body mx-0">
+              <h5 class="card-title mx-0">Nanyang Junior College</h5>
+              <p class="card-text mx-0">Feb 2019 to Nov 2020</p>
+              <p class="card-text mx-0">Studied H2 Physics, H2 Chemistry, H2 Mathematics, H2 Economics</p>
+              <p class="card-text mx-0 my-0">CCAS:</p>
+              <ul class="card-text mx-0 ps-1">
+                  <li class="my-0">President of Hanja (Korean Culture Club)</li>
+                  <li class="my-0">Organiser of Heart to Frontline</li>
+                  <li class="my-0">Member of Chinese Orchestra</li>
+              </ul>
+              <a href="https://nanyangjc.moe.edu.sg/" target='_blank' class="btn btn-pink mx-0">NYJC Website</a>
+            </div>
+          </div>
+          <div class="card col-sm-12 col-md-4" style="width: 18rem;">
+            <img src="./photos/education/zhss.jpeg" class="card-img-top education-img" alt="...">
+            <div class="card-body mx-0">
+                <h5 class="card-title mx-0">Zhonghua Secondary School</h5>
+                <p class="card-text mx-0">Jan 2015 to Nov 2018</p>
+                <p class="card-text mx-0">Studied Triple Science, Double Math, History & Social Studies</p>
+                <p class="card-text mx-0 my-0">CCAS:</p>
+                <ul class="card-text mx-0 ps-1">
+                    <li class="my-0">Section Leader of Chinese Orchestra</li>
+                    <li class="my-0">Member of Talent Development Programme</li>
+                    <li class="my-0">Participant of Eco Kepalas Programme</li>
+                </ul>
+                <a href="https://www.zhonghuasec.moe.edu.sg/" target='_blank' class="btn btn-pink mx-0">ZHSS Website</a>
+            </div>
+          </div>
+        </div>
+    </div>
