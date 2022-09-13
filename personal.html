@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" style="margin: 0;">
+<html lang='en' style='margin: 0;'>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>Bernice</title>
-    <link rel="icon" type="image/x-icon" href="./photos/pinkemoj.png">
+    <link rel='icon' type='image/x-icon' href='./photos/pinkemoj.png'>
     
     <!-- Bootstrap CDN CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC' crossorigin='anonymous'>
     <style> 
      * { 
          margin: 20px;
@@ -42,296 +42,167 @@
 
     </style> 
 </head>
-<body class="background-1">
+<body class='background-1'>
+  <script>
+    function carou_indic(n, day) { 
+      var final = "<button type='button' data-bs-target='#day" + day + "Carou' data-bs-slide-to='0' class='active' aria-current='true' aria-label='Slide 1'></button>"
+      for (i of Array(n-1).keys()) { 
+        final += "<button type='button' data-bs-target='#day" + day + "Carou' data-bs-slide-to='" + String(i+1) + "' aria-label='Slide " + String(i+2) + "'></button>"
+      }
+      return final
+    }
 
-      <nav class="navbar navbar-expand-lg navbar-dark navbar-custom m-0 w-100">
-        <div class="container-fluid">
-          <a class="navbar-brand" href=".">Bernice</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+    function carou_img(cap_list, day) { 
+      var final = "<div class='carousel-item active mx-auto mt-0'><img src='./photos/personal/day" + day + "/img1.jpg' class='d-block height-img m-0 mx-auto justify-content-center' alt='...'><div class='carousel-caption d-none d-md-block mb-0 pb-0 w-100 mx-auto'><p class='mb-0 caption-custom w-100 mx-auto'>" + cap_list[0] + "</p></div></div>"
+      var img_ind = 2
+      for (i of Array(cap_list.length - 1).keys()) { 
+        final += "<div class='carousel-item mx-auto mt-0'><img src='./photos/personal/day" + day + "/img" + String(img_ind) + ".jpg' class='d-block height-img m-0 mx-auto justify-content-center' alt='...'><div class='carousel-caption d-none d-md-block mb-0 pb-0 w-100 mx-auto'><p class='mb-0 caption-custom w-100 mx-auto'>" + cap_list[i+1] + "</p></div></div>"
+        img_ind += 1
+      }
+      return final 
+    }
+  </script>
+
+      <nav class='navbar navbar-expand-lg navbar-dark navbar-custom m-0 w-100'>
+        <div class='container-fluid'>
+          <a class='navbar-brand' href='.'>Bernice</a>
+          <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+            <span class='navbar-toggler-icon'></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link" href=".">Home</a>
+          <div class='collapse navbar-collapse' id='navbarNav'>
+            <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+              <li class='nav-item'>
+                <a class='nav-link' href='.'>Home</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./education.html">Education</a>
+              <li class='nav-item'>
+                <a class='nav-link' href='./education.html'>Education</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./experience.html">Experience</a>
+              <li class='nav-item'>
+                <a class='nav-link' href='./experience.html'>Experience</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="./personal.html">Personal Life</a>
+              <li class='nav-item'>
+                <a class='nav-link active' aria-current='page' href='./personal.html'>Personal Life</a>
               </li>
             </ul>
           </div>
         </div>
     </nav>
 
-    <div class="text-left pt-5 background-1 pb-5 mx-5"> 
+    <div class='text-left pt-5 background-1 pb-5 mx-5'> 
       <h2>Seoul Trip 2022</h2>
       <p>7 Aug 2022 to 14 Aug 2022</p>
       <p>During my Year 1 Summer break, I took a trip to Seoul, South Korea. I went with my parents and one of my university friend. Here was what happened during our eventful journey!</p>
       <p>Personally, I enjoy visiting South Korea as I am an avid fan of K-Pop and K-Drama. With my interest, I have also self-learnt the basics of the Korean language, which I later found to be especially useful in my trip!</p>
       <!-- DAY 1 -->
-      <div class="mx-0"> 
-        <h5 class="mt-5">Day 1: Arrival, Myeongdong, Dongdaemun</h5>
-        <div id="day1Carou" class="carousel slide carousel-dark mb-0" data-bs-ride="carousel">
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#day1Carou" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#day1Carou" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#day1Carou" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            <button type="button" data-bs-target="#day1Carou" data-bs-slide-to="3" aria-label="Slide 4"></button>
+      <div class='mx-0'> 
+        <h5 class='mt-5'>Day 1: Arrival, Myeongdong, Dongdaemun</h5>
+        <div class='carousel slide carousel-dark mb-0' data-bs-ride='carousel'>
+          <div class='carousel-indicators' id="day1carouindic">
           </div>
-          <div class="carousel-inner mx-auto my-0">
-            <div class="carousel-item active mx-auto mt-0">
-              <img src="./photos/personal/day1/img1.jpg" class="d-block height-img m-0 mx-auto justify-content-center" alt="...">
-              <div class="carousel-caption d-none d-md-block mb-0 pb-0 w-100 mx-auto">
-                <p class="mb-0 caption-custom w-100 mx-auto">Clouds from the plane</p>
-              </div>
-            </div>
-            <div class="carousel-item mx-auto mt-0">
-              <img src="./photos/personal/day1/img2.JPG" class="d-block height-img m-0 mx-auto" alt="...">
-              <div class="carousel-caption d-none d-md-block mb-0 pb-0">
-                <p class="mb-0 caption-custom">My friend and I in Olive Young!</p>
-              </div>
-            </div>
-            <div class="carousel-item mx-auto mt-0">
-              <img src="./photos/personal/day1/img3.JPG" class="d-block height-img m-0 mx-auto" alt="...">
-              <div class="carousel-caption d-none d-md-block mb-0 pb-0">
-                <p class="mb-0 caption-custom">Myeongdong Streets</p>
-              </div>
-            </div>
-            <div class="carousel-item mx-auto mt-0">
-              <img src="./photos/personal/day1/img4.JPG" class="d-block height-img m-0 mx-auto" alt="...">
-              <div class="carousel-caption d-none d-md-block mb-0 pb-0">
-                <p class="mb-0 caption-custom">Banana milk before we head back to the hotel~</p>
-              </div>
-            </div>
+          <div class='carousel-inner mx-auto my-0' id="day1carouimg">
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#day1Carou" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
+          <script> 
+            var day = '1'
+            document.getElementById('day' + day + 'carouimg').innerHTML = carou_indic(4,day)
+            document.getElementById('day' + day + 'carouimg').innerHTML = carou_img(["Clouds from the plane", "My friend and I in Olive Young!", "Myeongdong Streets", "Banana milk before we head back to the hotel~"],day)
+          </script>
+          <button class='carousel-control-prev' type='button' data-bs-target='#day1Carou' data-bs-slide='prev'>
+            <span class='carousel-control-prev-icon' aria-hidden='true'></span>
+            <span class='visually-hidden'>Previous</span>
           </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#day1Carou" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
+          <button class='carousel-control-next' type='button' data-bs-target='#day1Carou' data-bs-slide='next'>
+            <span class='carousel-control-next-icon' aria-hidden='true'></span>
+            <span class='visually-hidden'>Next</span>
           </button>
         </div>
         <p>On Day 1, we arrived in Seoul around 7am. After settling down in the hotel, we hit the streets of Myeongdong, and visited a few malls in Dongdaemun. A lot of the shops in Myeongdong unfortunately closed due to COVID, but the vibe was still good!</p>
-        <ul class="my-0 ps-0">Food:</ul>
-        <li class="my-0">Kyoja @ Myeongdong</li>
-        <li class="my-0">Doenjang Jjigae @ Doota Mall</li>
+        <ul class='my-0 ps-0'>Food:</ul>
+        <li class='my-0'>Kyoja @ Myeongdong</li>
+        <li class='my-0'>Doenjang Jjigae @ Doota Mall</li>
       </div>
       <!-- DAY 2 -->
-      <div class="mx-0"> 
-        <h5 class="mt-5">Day 2: Express Bus Terminal, IFC Mall</h5>
-        <div id="day2Carou" class="carousel slide carousel-dark mb-0" data-bs-ride="carousel">
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#day2Carou" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#day2Carou" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#day2Carou" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            <button type="button" data-bs-target="#day2Carou" data-bs-slide-to="3" aria-label="Slide 4"></button>
+      <div class='mx-0'> 
+        <h5 class='mt-5'>Day 2: Express Bus Terminal, IFC Mall</h5>
+        <div id='day2Carou' class='carousel slide carousel-dark mb-0' data-bs-ride='carousel'>
+          <div class='carousel-indicators' id="day2carouindic">
           </div>
-          <div class="carousel-inner mx-auto my-0">
-            <div class="carousel-item active mx-auto mt-0">
-              <img src="./photos/personal/day2/img1.JPG" class="d-block height-img m-0 mx-auto justify-content-center" alt="...">
-              <div class="carousel-caption d-none d-md-block mb-0 pb-0 w-100 mx-auto">
-                <p class="mb-0 caption-custom w-100 mx-auto">Mirror selfie in one of the stores in Express Bus Terminal</p>
-              </div>
-            </div>
-            <div class="carousel-item mx-auto mt-0">
-              <img src="./photos/personal/day2/img2.JPG" class="d-block height-img m-0 mx-auto" alt="...">
-              <div class="carousel-caption d-none d-md-block mb-0 pb-0">
-                <p class="mb-0 caption-custom">The churros and Paik's Coffee was really good</p>
-              </div>
-            </div>
-            <div class="carousel-item mx-auto mt-0">
-              <img src="./photos/personal/day2/img3.JPG" class="d-block height-img m-0 mx-auto" alt="...">
-              <div class="carousel-caption d-none d-md-block mb-0 pb-0">
-                <p class="mb-0 caption-custom">We saw this grocery pop up store nearby Express Bus Terminal</p>
-              </div>
-            </div>
-            <div class="carousel-item mx-auto mt-0">
-              <img src="./photos/personal/day2/img4.jpg" class="d-block height-img m-0 mx-auto" alt="...">
-              <div class="carousel-caption d-none d-md-block mb-0 pb-0">
-                <p class="mb-0 caption-custom">Dinner menu :P</p>
-              </div>
-            </div>
+          <div class='carousel-inner mx-auto my-0' id="day2carouimg">
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#day2Carou" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
+          <script> 
+            var day = 2
+            document.getElementById('day' + day + 'carouindic').innerHTML = carou_indic(4,day)
+            document.getElementById('day' + day + 'carouimg').innerHTML = carou_img(["Mirror selfie in one of the stores in Express Bus Terminal", "The churros and Paik's Coffee was really good", "We saw this grocery pop up store nearby Express Bus Terminal", "Dinner menu :P"],day)
+          </script>
+          <button class='carousel-control-prev' type='button' data-bs-target='#day2Carou' data-bs-slide='prev'>
+            <span class='carousel-control-prev-icon' aria-hidden='true'></span>
+            <span class='visually-hidden'>Previous</span>
           </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#day2Carou" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
+          <button class='carousel-control-next' type='button' data-bs-target='#day2Carou' data-bs-slide='next'>
+            <span class='carousel-control-next-icon' aria-hidden='true'></span>
+            <span class='visually-hidden'>Next</span>
           </button>
         </div>
         <p>The focus of the next day was shopping!! We went to Express Bus Terminal, which we knew had the best prices for clothing. Based on our itinerary, we were supposed to visit the Han River. However, this was coincidentally also the day that Han River got flooded with the extreme rain in Seoul. As such, we settled on going to a high-end mall in Yeouido, IFC mall.</p>
-        <ul class="my-0 ps-0">Food:</ul>
-        <li class="my-0">Paik's Coffee and Churros @ Express Bus Terminal</li>
-        <li class="my-0">Mama Doenjang @ IFC Mall</li>
+        <ul class='my-0 ps-0'>Food:</ul>
+        <li class='my-0'>Paik's Coffee and Churros @ Express Bus Terminal</li>
+        <li class='my-0'>Mama Doenjang @ IFC Mall</li>
       </div>
       <!-- DAY 3 -->
-      <div class="mx-0"> 
-        <h5 class="mt-5">Day 3: Lotte World, Lotte Mall</h5>
-        <div id="day3Carou" class="carousel slide carousel-dark mb-0" data-bs-ride="carousel">
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#day3Carou" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#day3Carou" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#day3Carou" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            <button type="button" data-bs-target="#day3Carou" data-bs-slide-to="3" aria-label="Slide 4"></button>
-            <button type="button" data-bs-target="#day3Carou" data-bs-slide-to="4" aria-label="Slide 5"></button>
-            <button type="button" data-bs-target="#day3Carou" data-bs-slide-to="5" aria-label="Slide 6"></button>
-            <button type="button" data-bs-target="#day3Carou" data-bs-slide-to="6" aria-label="Slide 7"></button>
-            <button type="button" data-bs-target="#day3Carou" data-bs-slide-to="7" aria-label="Slide 8"></button>
+      <div class='mx-0'> 
+        <h5 class='mt-5'>Day 3: Lotte World, Lotte Mall</h5>
+        <div id='day3Carou' class='carousel slide carousel-dark mb-0' data-bs-ride='carousel'>
+          <div class='carousel-indicators' id="day3carouindic">
           </div>
-          <div class="carousel-inner mx-auto my-0">
-            <div class="carousel-item active mx-auto mt-0">
-              <img src="./photos/personal/day3/img1.JPG" class="d-block height-img m-0 mx-auto justify-content-center" alt="...">
-              <div class="carousel-caption d-none d-md-block mb-0 pb-0 w-100 mx-auto">
-                <p class="mb-0 caption-custom w-100 mx-auto">Lotte World Tickets</p>
-              </div>
-            </div>
-            <div class="carousel-item mx-auto mt-0">
-              <img src="./photos/personal/day3/img2.jpg" class="d-block height-img m-0 mx-auto" alt="...">
-              <div class="carousel-caption d-none d-md-block mb-0 pb-0">
-                <p class="mb-0 caption-custom">Skeleton in one of the rides LOL</p>
-              </div>
-            </div>
-            <div class="carousel-item mx-auto mt-0">
-              <img src="./photos/personal/day3/img3.jpg" class="d-block height-img m-0 mx-auto" alt="...">
-              <div class="carousel-caption d-none d-md-block mb-0 pb-0">
-                <p class="mb-0 caption-custom">They had a photoshoot set up!</p>
-              </div>
-            </div>
-            <div class="carousel-item mx-auto mt-0">
-              <img src="./photos/personal/day3/img4.jpg" class="d-block height-img m-0 mx-auto" alt="...">
-              <div class="carousel-caption d-none d-md-block mb-0 pb-0">
-                <p class="mb-0 caption-custom">Taking a picture inside one of the rides</p>
-              </div>
-            </div>
-            <div class="carousel-item mx-auto mt-0">
-              <img src="./photos/personal/day3/img5.JPG" class="d-block height-img m-0 mx-auto" alt="...">
-              <div class="carousel-caption d-none d-md-block mb-0 pb-0">
-                <p class="mb-0 caption-custom">Revisiting air rifling</p>
-              </div>
-            </div>
-            <div class="carousel-item mx-auto mt-0">
-              <img src="./photos/personal/day3/img6.jpg" class="d-block height-img m-0 mx-auto" alt="...">
-              <div class="carousel-caption d-none d-md-block mb-0 pb-0">
-                <p class="mb-0 caption-custom">Carousel :))</p>
-              </div>
-            </div>
-            <div class="carousel-item mx-auto mt-0">
-              <img src="./photos/personal/day3/img7.jpg" class="d-block height-img m-0 mx-auto" alt="...">
-              <div class="carousel-caption d-none d-md-block mb-0 pb-0">
-                <p class="mb-0 caption-custom">Ramen in Lotte Mart</p>
-              </div>
-            </div>
-            <div class="carousel-item mx-auto mt-0">
-              <img src="./photos/personal/day3/img8.jpg" class="d-block height-img m-0 mx-auto" alt="...">
-              <div class="carousel-caption d-none d-md-block mb-0 pb-0">
-                <p class="mb-0 caption-custom">Rainy day</p>
-              </div>
-            </div>
+          <div class='carousel-inner mx-auto my-0' id="day3carouimg">
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#day3Carou" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
+          <script> 
+            var day = 3
+            document.getElementById('day' + day + 'carouindic').innerHTML = carou_indic(8,day)
+            document.getElementById('day' + day + 'carouimg').innerHTML = carou_img(["Lotte World tickets", "Skeleton in one of the rides LOL", "They had a photoshoot set up!", "Taking a picture inside one of the rides", "Revisiting air rifling", "Selca :))", "Ramen in Lotte Mart", "Rainy day"],day)
+          </script>
+          <button class='carousel-control-prev' type='button' data-bs-target='#day3Carou' data-bs-slide='prev'>
+            <span class='carousel-control-prev-icon' aria-hidden='true'></span>
+            <span class='visually-hidden'>Previous</span>
           </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#day3Carou" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
+          <button class='carousel-control-next' type='button' data-bs-target='#day3Carou' data-bs-slide='next'>
+            <span class='carousel-control-next-icon' aria-hidden='true'></span>
+            <span class='visually-hidden'>Next</span>
           </button>
         </div>
         <p>When we go to Seoul, we definitely have to visit Lotte World! The last time I visited Lotte World, I enjoyed myself a lot. The outdoor rides were especially thrilling. Unfortunately, due to the rain, most of the outdoor rides were closed :( Nonetheless, we still had a great time in the amusement park. Thereafter, we went to Lotte Mart for grocery shopping!</p>
-        <ul class="my-0 ps-0">Food:</ul>
-        <li class="my-0">Hotdog @ Lotte World</li>
-        <li class="my-0">Naengmyeong @ Seoul Station</li>
+        <ul class='my-0 ps-0'>Food:</ul>
+        <li class='my-0'>Hotdog @ Lotte World</li>
+        <li class='my-0'>Naengmyeong @ Seoul Station</li>
       </div>
       <!-- DAY 4 -->
-      <div class="mx-0"> 
-        <h5 class="mt-5">Day 4: Jongro, Ikseondong, Tosokchon, Gwangjang Market</h5>
-        <div id="day4Carou" class="carousel slide carousel-dark mb-0" data-bs-ride="carousel">
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#day4Carou" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#day4Carou" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#day4Carou" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            <button type="button" data-bs-target="#day4Carou" data-bs-slide-to="3" aria-label="Slide 4"></button>
-            <button type="button" data-bs-target="#day4Carou" data-bs-slide-to="4" aria-label="Slide 5"></button>
-            <button type="button" data-bs-target="#day4Carou" data-bs-slide-to="5" aria-label="Slide 6"></button>
-            <button type="button" data-bs-target="#day4Carou" data-bs-slide-to="6" aria-label="Slide 7"></button>
-            <button type="button" data-bs-target="#day4Carou" data-bs-slide-to="7" aria-label="Slide 8"></button>
+      <div class='mx-0'> 
+        <h5 class='mt-5'>Day 4: Jongro, Ikseondong, Tosokchon, Gwangjang Market</h5>
+        <div id='day4Carou' class='carousel slide carousel-dark mb-0' data-bs-ride='carousel'>
+          <div class='carousel-indicators' id="day4carouindic">
           </div>
-          <div class="carousel-inner mx-auto my-0">
-            <div class="carousel-item active mx-auto mt-0">
-              <img src="./photos/personal/day4/img1.jpg" class="d-block height-img m-0 mx-auto justify-content-center" alt="...">
-              <div class="carousel-caption d-none d-md-block mb-0 pb-0 w-100 mx-auto">
-                <p class="mb-0 caption-custom w-100 mx-auto">OOTD!</p>
-              </div>
-            </div>
-            <div class="carousel-item mx-auto mt-0">
-              <img src="./photos/personal/day4/img2.jpg" class="d-block height-img m-0 mx-auto" alt="...">
-              <div class="carousel-caption d-none d-md-block mb-0 pb-0">
-                <p class="mb-0 caption-custom">Korean streets</p>
-              </div>
-            </div>
-            <div class="carousel-item mx-auto mt-0">
-              <img src="./photos/personal/day4/img3.jpg" class="d-block height-img m-0 mx-auto" alt="...">
-              <div class="carousel-caption d-none d-md-block mb-0 pb-0">
-                <p class="mb-0 caption-custom">Lunch!</p>
-              </div>
-            </div>
-            <div class="carousel-item mx-auto mt-0">
-              <img src="./photos/personal/day4/img4.jpg" class="d-block height-img m-0 mx-auto" alt="...">
-              <div class="carousel-caption d-none d-md-block mb-0 pb-0">
-                <p class="mb-0 caption-custom">More streets</p>
-              </div>
-            </div>
-            <div class="carousel-item mx-auto mt-0">
-              <img src="./photos/personal/day4/img5.jpg" class="d-block height-img m-0 mx-auto" alt="...">
-              <div class="carousel-caption d-none d-md-block mb-0 pb-0">
-                <p class="mb-0 caption-custom">Palace</p>
-              </div>
-            </div>
-            <div class="carousel-item mx-auto mt-0">
-              <img src="./photos/personal/day4/img6.jpg" class="d-block height-img m-0 mx-auto" alt="...">
-              <div class="carousel-caption d-none d-md-block mb-0 pb-0">
-                <p class="mb-0 caption-custom">At a temple... I think?</p>
-              </div>
-            </div>
-            <div class="carousel-item mx-auto mt-0">
-              <img src="./photos/personal/day4/img7.jpg" class="d-block height-img m-0 mx-auto" alt="...">
-              <div class="carousel-caption d-none d-md-block mb-0 pb-0">
-                <p class="mb-0 caption-custom">This arcade was featured in a lot of KDramas!</p>
-              </div>
-            </div>
-            <div class="carousel-item mx-auto mt-0">
-              <img src="./photos/personal/day4/img8.jpg" class="d-block height-img m-0 mx-auto" alt="...">
-              <div class="carousel-caption d-none d-md-block mb-0 pb-0">
-                <p class="mb-0 caption-custom">Ikseondong had really nice vibes</p>
-              </div>
-            </div>
+          <div class='carousel-inner mx-auto my-0' id="day4carouimg">
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#day4Carou" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
+          <script> 
+            var day = '4'
+            document.getElementById('day' + day + 'carouindic').innerHTML = carou_indic(8,day)
+            document.getElementById('day' + day + 'carouimg').innerHTML = carou_img(["OOTD!", "Korean streets", "Lunch in quite a traditional restaurant!", "More streets", "Palace", "At a temple... I think?", "This arcade was featured in a lot of KDramas!", "Ikseondong had really nice vibes"],day)
+          </script>
+          <button class='carousel-control-prev' type='button' data-bs-target='#day4Carou' data-bs-slide='prev'>
+            <span class='carousel-control-prev-icon' aria-hidden='true'></span>
+            <span class='visually-hidden'>Previous</span>
           </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#day4Carou" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
+          <button class='carousel-control-next' type='button' data-bs-target='#day4Carou' data-bs-slide='next'>
+            <span class='carousel-control-next-icon' aria-hidden='true'></span>
+            <span class='visually-hidden'>Next</span>
           </button>
         </div>
         <p>Unexpectedly, this was actually my favourite day! We decided to take a trip down to the smaller neighbourhoods in Seoul, and found that Jongro (the office area) and Ikseondong had much to offer! Not only were there a lot of good food places, there was also a lot to see, and we felt that we had a glimpse into the daily lives of Korean people :)</p>
-        <ul class="my-0 ps-0">Food:</ul>
-        <li class="my-0">Cheese Tart @ Jongro</li>
-        <li class="my-0">Doenjang Jjigae @ Jongro</li>
-        <li class="my-0">Odeng & Mandu @ Gwangjang Market</li>
-        <li class="my-0">Bread & Cake @ Ikseondong</li>
+        <ul class='my-0 ps-0'>Food:</ul>
+        <li class='my-0'>Cheese Tart @ Jongro</li>
+        <li class='my-0'>Doenjang Jjigae @ Jongro</li>
+        <li class='my-0'>Odeng & Mandu @ Gwangjang Market</li>
+        <li class='my-0'>Bread & Cake @ Ikseondong</li>
       </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM' crossorigin='anonymous'></script>
